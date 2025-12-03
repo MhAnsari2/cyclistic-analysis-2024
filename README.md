@@ -138,25 +138,26 @@ Divvy/Cyclistic's **public historical trip data** is the source of all the infor
 
 - **Source:** [Divvy / Cyclistic historical trip data (2024)](https://divvy-tripdata.s3.amazonaws.com/index.html)  
 - **Access date:** 2025-08-01  
-- **Owner:** Lyft, Divvy and City of Chicago  
+- **Owner:** Data made available by Motivate International Inc. (Divvy); Cyclistic is a fictional company built on this real-world data.
 The information has already been de-identified. There is no personally identifiable information (PII) such as phone numbers, names, or payment information.
 
 Monthly CSV files containing the raw data are supplied. In order to capture a full year of behavior and seasonality, I used **12 months of data (January–December 2024)** for this analysis.
 
 ### 6.2 Files and Storage
 
-Every monthly file has a similar naming scheme, such as:
+Each CSV data file has a similar naming scheme, such as:
+202401-divvy-tripdata.csv … 202412-divvy-tripdata.csv
 
-- `202401-divvy-tripdata.csv`  
-- `202402-divvy-tripdata.csv`  
-- …  
-- `202412-divvy-tripdata.csv`
+For this project, I first downloaded the CSV data files for 2024 from the public Divvy/Cyclistic data portal.  
+These files were then loaded into BigQuery, where I used a set of SQL scripts (01_combine, 02_explore, 03_clean, 04_analyze) to:
 
-For the project structure (as used in the SQL scripts and analysis):
+- combined all months into a single table,
+- explored data quality and structure,
+- cleaned and filtered the records, and
+- created summary tables for analysis.
 
-- `raw_data/` – originally downloaded CSV files from the source  
-- `sql/` – various SQL scripts (combination, exploration, cleaning, analysis)  
-- `output/` – cleaned combined table saved as `cleaned_combined_data.csv` and later imported into Tableau
+The final cleaned table (`cleaned_combined_data`) was then connected directly to Tableau for building the dashboards.  
+All related SQL scripts are included in this repository.
 
 ### 6.3 Main Fields Used
 
@@ -170,7 +171,7 @@ There are numerous columns in every monthly file. The following key areas are th
 - `start_lat`, `start_lng`, `end_lat`, `end_lng` – geographic coordinates  
 - `member_casual` – rider category (`member` vs `casual`)
 
-Later in the **Process** step, more derived fields are generated from these columns, including:
+Later in the **Process** step, more subset fields are generated from these columns. including:
 
 - `ride_length` (in minutes)  
 - `day_of_week`  
@@ -203,13 +204,12 @@ Every process was carried out using SQL (BigQuery-style syntax). Four scripts th
 
 ### 7.1 Tools 
 
-- Environment: SQL (BigQuery)  
-- Input: 12-month CSVs for 2024  
-- Output: a cleaned table `cleaned_combined_data` is made.
+BigQuery SQL was used for data processing. The input was the 12 monthly CSV data files for 2024, and the result was a single cleaned table called cleaned_combined_data.
+Later on the output from previous step is used as an input to visialize the results by utilizing the web based Tableau software. And finally, Github is where the final project is shared through.
 
 ### 7.2 Data Combining 
 
-- All 12 monthly tables were imported.  
+- Entire 12 monthly tables were imported.  
 - Used `UNION ALL` to stack them into one table.  
 - Retained only the relevant columns: IDs, timestamps, stations, coordinates, bike type, and `member_casual`.
 
