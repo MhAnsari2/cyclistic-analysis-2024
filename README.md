@@ -293,6 +293,11 @@ The final screen focuses on place. It lists the most frequent start–end statio
 
 Together, these three views turn the SQL summaries into a coherent visual narrative: how much people ride, when they ride, and where they go, always comparing members and casual riders in a way that directly supports the marketing question behind the case study.
 
+### 9.1 Sample Visualizations
+
+![Ride length dashboard](IMG/Viz2.png)
+![Bike type and Time patterns dashboard](IMG/Viz3.png)
+![Routes map dashboard](IMG/Viz1.png)
 
 ---
 
