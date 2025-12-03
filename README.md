@@ -262,7 +262,7 @@ For each membership type, SQL computes:
 - Monthly **long-ride share** (> 30 minutes): `long_share = long_trips / total_trips`.
 
 The results show that casual riders typically ride longer and have a higher proportion of long trips. In Tableau, these appear as side-by-side bars and lines for members vs casual riders.
-
+![Ride length dashboard](IMG/Viz2.png)
 ---
 
 ### 8.4 Bike Types and Routes
@@ -278,7 +278,8 @@ These outputs are visualised in Tableau as:
 - A map connecting the main origin–destination pairs.
 
 Together, the SQL aggregations and Tableau dashboards reveal clear behavioural differences between members and casual riders, which are summarised in the findings and used in the recommendations that follow.
-
+![Bike type and Time patterns dashboard](IMG/Viz3.png)
+![Routes map dashboard](IMG/Viz1.png)
 ---
 
 ## 9. Share – Dashboards and Visual Story
@@ -293,11 +294,6 @@ The final screen focuses on place. It lists the most frequent start–end statio
 
 Together, these three views turn the SQL summaries into a coherent visual narrative: how much people ride, when they ride, and where they go, always comparing members and casual riders in a way that directly supports the marketing question behind the case study.
 
-### 9.1 Sample Visualizations
-
-![Ride length dashboard](IMG/Viz2.png)
-![Bike type and Time patterns dashboard](IMG/Viz3.png)
-![Routes map dashboard](IMG/Viz1.png)
 
 ---
 
