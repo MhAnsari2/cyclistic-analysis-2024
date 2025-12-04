@@ -27,14 +27,11 @@ Finding out **how annual members and casual riders differ in their usage pattern
   *[Tableau Visualization](https://public.tableau.com/views/TheCyclisticBike-ShareDataAnalysis/PopularRoutes?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)*
 
 - **SQL Scripts:**  
-  - 01 – Data Combining
-  - ![01 – Data Combining](SQL/01_combine.sql)
-  - 02 – Data Exploration
-  - ![02 – Data Exploration](SQL/02_explore.sql)
-  - 03 – Data Cleaning
-  - ![03 – Data Cleaning](SQL/03_clean.sql)
-  - 04 – Data Analysis
-  - ![04 – Data Analysis](SQL/04_analyze.sql)
+
+  - [01 – Data Combining](SQL/01_combine.sql)
+  - [02 – Data Exploration](SQL/02_explore.sql)
+  - [03 – Data Cleaning](SQL/03_clean.sql)
+  - [04 – Data Analysis](SQL/04_analyze.sql)
 
 ---
 
